@@ -34,8 +34,8 @@ public class SumOfNumbers {
     int[] nums = new int[]{ 1, 2, 3, 4 };
 
     int[] result = sumOfNumbers.runningSum( nums );
-    for( int i =0; i < result.length; i++ ){
-      System.out.print( result[i] + " " );
+    for (int j : result) {
+      System.out.print(j + " ");
     }
 
   }
