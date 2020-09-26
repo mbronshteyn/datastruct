@@ -25,7 +25,7 @@ import java.util.Set;
  */
 public class JewelsAndStones {
   public static void main(String[] args) {
-    Solution solution = new Solution();
+    JewelsAndStonesSolution solution = new JewelsAndStonesSolution();
     String J = "aA";
     String S = "aAAbbbb";
 
@@ -33,7 +33,7 @@ public class JewelsAndStones {
   }
 }
 
-class Solution {
+class JewelsAndStonesSolution {
   public int numJewelsInStones(String J, String S) {
     // create a set from J - jewels
     char[] jarray = J.toCharArray();
