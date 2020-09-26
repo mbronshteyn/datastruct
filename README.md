@@ -6,8 +6,6 @@ Most of them are from [leetcode.com](https://www.leetcode.com)
 
 ReverseString - reverse String recursively
 <br><br><br>
-NumIslands - calculate number of Islands using grid
-<br><br><br> 
 TwoNumbers - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target
 <br><br><br> 
 SumOfNumbers - Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
