@@ -1,3 +1,5 @@
+package easy;
+
 /**
  * Reverse Java String
  */
@@ -6,7 +8,7 @@ public class ReverseString {
 
   public static void main(String[] args) {
     String str = "abcd";
-    System.out.println( "Given string: " + str );
+    System.out.println("Given string: " + str);
     String reversed = reverseString(str);
     System.out.println("The reversed string is: " + reversed);
   }

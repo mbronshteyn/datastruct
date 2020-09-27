@@ -1,3 +1,5 @@
+package easy;
+
 /**
  * Given a string s and an integer array indices of the same length.
  * <p>
