@@ -39,6 +39,7 @@ class NumberOfStepsSolution {
   public int numberOfSteps(int num) {
     int counter = 0;
     while (num > 0) {
+      // if number is even
       if (num % 2 == 0) {
         num = num / 2;
       } else {
