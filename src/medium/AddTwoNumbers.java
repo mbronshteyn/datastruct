@@ -98,7 +98,7 @@ class AddTwoNumbersSolution {
       }
 
       if (result == null) {
-        // first run. need to init both result and accumulator
+        // first run. need to init both result and pointer
         result = new ListNode(k);
         pointer = result;
       } else {
