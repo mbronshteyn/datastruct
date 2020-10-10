@@ -4,17 +4,17 @@ Collection of Java classes with coding problems which come during whiteboard int
 
 Most of them are from [leetcode.com](https://www.leetcode.com)
 
-ReverseString - reverse String recursively
+easy.ReverseString - reverse String recursively
 <br><br><br>
-TwoNumbers - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target
+easy.TwoNumbers - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target
 <br><br><br> 
-SumOfNumbers - Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+easy.SumOfNumbers - Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
 <br>Return the running sum of nums.
 <br><br><br> 
-JewelsAndStones - You're given strings J representing the types of stones that are jewels, and S representing the stones you have.<br>
+easy.JewelsAndStones - You're given strings J representing the types of stones that are jewels, and S representing the stones you have.<br>
 You want to know how many of the stones you have are also jewels
 <br>Return the running the number of jewels
 <br><br><br> 
-NumOfGoodPairs - Given an array of integers nums. A pair (i,j) is called good if nums[i] == nums[j] and i < j.
+easy.NumOfGoodPairs - Given an array of integers nums. A pair (i,j) is called good if nums[i] == nums[j] and i < j.
 <br>Return the number of good pairs.
 <br><br><br> 

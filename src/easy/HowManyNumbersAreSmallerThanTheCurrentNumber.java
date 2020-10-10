@@ -40,7 +40,7 @@ public class HowManyNumbersAreSmallerThanTheCurrentNumber {
     int[] result = solution.smallerNumbersThanCurrent(new int[]{8, 1, 2, 2, 3});
 
     for (int i = 0; i < result.length; i++) {
-      System.out.print(" " + result[i]);
+      System.out.println(" " + result[i]);
     }
   }
 }
