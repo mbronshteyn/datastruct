@@ -1,24 +1,28 @@
 package interviews;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CompletableFutureTest {
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
 
-    List<Greet> greetList = Arrays.asList(new Greet("Hello"), new Greet("Beautiful"), new Greet("World "));
+    List<Greet> greetList =
+            Stream.of("Hello", "Beautiful", "World ")
+                    .map(Greet::new)
+                    .collect(Collectors.toList());
 
-    List<CompletableFuture<String>> list = greetList.stream()
-            .map(greet -> {
-              return CompletableFuture.supplyAsync(greet::getGreeting);
-            })
-            .collect(Collectors.toList());
+    List<CompletableFuture<String>> cfList =
+            greetList.stream()
+                    .map(
+                            greet -> {
+                              return CompletableFuture.supplyAsync(greet::getGreetingMsg);
+                            })
+                    .collect(Collectors.toList());
 
-    List<String> threadInfoList = list.stream()
-            .map(CompletableFuture::join)
-            .collect(Collectors.toList());
+    List<String> threadInfoList =
+            cfList.stream().map(CompletableFuture::join).collect(Collectors.toList());
 
     threadInfoList.forEach(System.out::println);
   }
@@ -37,8 +41,7 @@ class Greet {
    *
    * @return
    */
-  public String getGreeting() {
+  public String getGreetingMsg() {
     return msg + " running on thread " + Thread.currentThread().getName();
   }
 }
-
