@@ -18,3 +18,5 @@ You want to know how many of the stones you have are also jewels
 easy.NumOfGoodPairs - Given an array of integers nums. A pair (i,j) is called good if nums[i] == nums[j] and i < j.
 <br>Return the number of good pairs.
 <br><br><br> 
+
+There is a lot more inside the project. Just look inside. Each class is accompanied with the detailed problem description and examples to help to solve it.
