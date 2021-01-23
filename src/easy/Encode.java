@@ -1,51 +1,31 @@
 package easy;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Encode {
   public static void main(String[] args) {
     Encode encode = new Encode();
-    System.out.println(encode.encode("AAABBCC"));
-    System.out.println(encode.encode("AAABBCCA"));
-    System.out.println(encode.encode("ZAAABBCC"));
+    System.out.println(encode.encodeArray("AAABBCC"));
+    System.out.println(encode.encodeArray("AAABBCCA"));
+    System.out.println(encode.encodeArray("ZAAABBCC"));
+    System.out.println(encode.encodeArray("ZAZABBCCZ"));
   }
 
-  public String encode(String input) {
-
-    Map<Character, Integer> accumulator = new HashMap<>();
-    StringBuilder result = new StringBuilder();
-
-    // convert String to char array
-    char[] chars = input.toCharArray();
-    char prevChar = 0;
-    for (int i = 0; i < chars.length; i++) {
-      char currentChar = chars[i];
-      if (accumulator.containsKey(currentChar)) {
-        // get value from map
-        int count = accumulator.get(currentChar);
-        accumulator.put(currentChar, ++count);
-        prevChar = currentChar;
+  public String encodeArray(String input) {
+    int counter = 1;
+    StringBuilder stringBuilder = new StringBuilder(input.length());
+    char[] array = input.toCharArray();
+    for (int i = 0; i < array.length; i++) {
+      // handle the end of the array
+      if (i + 1 == array.length) {
+        stringBuilder.append(counter).append(array[i]);
+        break;
+      } else if (array[i] == array[i + 1]) {
+        // nothing to do but increment counter
+        counter++;
       } else {
-        // we have a chance in character
-        if (prevChar != 0) {
-          int count = accumulator.get(prevChar);
-          result.append(prevChar).append(count);
-          accumulator.clear();
-          prevChar = currentChar;
-        } else if (currentChar != chars[i + 1]) {
-          // case when we have only one char in sequence
-          // and is the first one in sequence
-          result.append(currentChar).append(1);
-        }
-        accumulator.put(currentChar, 1);
+        stringBuilder.append(counter).append(array[i]);
+        counter = 1;
       }
     }
-
-    // get the last count from the map
-    int lastCount = accumulator.get(prevChar);
-    result.append(prevChar).append(lastCount);
-
-    return result.toString();
+    return stringBuilder.toString();
   }
 }
