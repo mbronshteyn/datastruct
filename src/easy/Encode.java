@@ -17,7 +17,6 @@ public class Encode {
       // handle the end of the array
       if (i + 1 == array.length) {
         stringBuilder.append(counter).append(array[i]);
-        break;
       } else if (array[i] == array[i + 1]) {
         // nothing to do but increment counter
         counter++;
