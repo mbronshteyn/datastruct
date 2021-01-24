@@ -2,16 +2,15 @@ package easy;
 
 public class Encode {
   public static void main(String[] args) {
-    Encode encode = new Encode();
-    System.out.println(encode.encode("AAABBCC"));
-    System.out.println(encode.encode("AAABBCCA"));
-    System.out.println(encode.encode("ZAAABBCC"));
-    System.out.println(encode.encode("ZAZABBCCZ"));
-    System.out.println(encode.encode("A"));
-    System.out.println(encode.encode(""));
+    validate("AAABBCC", "3A2B2C");
+    validate("AAABBCCA", "3A2B2C1A");
+    validate("ZAAABBCC", "1Z3A2B2C");
+    validate("ZAZABBCCZ", "1Z1A1Z1A2B2C1Z");
+    validate("A", "1A");
+    validate("", "");
   }
 
-  public String encode(String input) {
+  public static String encode(String input) {
     int counter = 1;
     // average on the buffer size
     StringBuilder stringBuilder = new StringBuilder(input.length());
@@ -29,5 +28,15 @@ public class Encode {
       }
     }
     return stringBuilder.toString();
+  }
+
+  private static void validate(String actual, String expected){
+      String result = encode(actual);
+      if(result.equals(expected)){
+          System.out.println("SUCCESS: " + result);
+      } else {
+        System.out.println(String.format("ERROR: result: %s; expected: %s", result, expected));
+      }
+
   }
 }
