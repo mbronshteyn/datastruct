@@ -3,14 +3,17 @@ package easy;
 public class Encode {
   public static void main(String[] args) {
     Encode encode = new Encode();
-    System.out.println(encode.encodeArray("AAABBCC"));
-    System.out.println(encode.encodeArray("AAABBCCA"));
-    System.out.println(encode.encodeArray("ZAAABBCC"));
-    System.out.println(encode.encodeArray("ZAZABBCCZ"));
+    System.out.println(encode.encode("AAABBCC"));
+    System.out.println(encode.encode("AAABBCCA"));
+    System.out.println(encode.encode("ZAAABBCC"));
+    System.out.println(encode.encode("ZAZABBCCZ"));
+    System.out.println(encode.encode("A"));
+    System.out.println(encode.encode(""));
   }
 
-  public String encodeArray(String input) {
+  public String encode(String input) {
     int counter = 1;
+    // average on the buffer size
     StringBuilder stringBuilder = new StringBuilder(input.length());
     char[] array = input.toCharArray();
     for (int i = 0; i < array.length; i++) {
