@@ -1,6 +1,7 @@
 package easy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,17 +12,21 @@ typically using all the original letters exactly once"
  */
 public class Anagram {
     public static void main(String[] args) {
+        // assume length is the same, other wise it is easy
         String wordOne = "restful";
         String wordTwo = "fluster";
 
-        List<Character> wordOneList = wordOne.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
-        List<Character> wordTwoList = wordTwo.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+        char[] wordOneArray = wordOne.toCharArray();
+        char[] wordTwoArray = wordTwo.toCharArray();
+
+        Arrays.sort(wordOneArray);
+        Arrays.sort(wordTwoArray);
 
         boolean match = true;
-        for( Character c : wordOneList){
-            if(wordTwoList.contains(c) == false ){
-               match = false;
-               break;
+        for(int i = 0; i < wordOneArray.length; i++){
+            if(wordOneArray[i] != wordTwoArray[i]){
+                match = false;
+                break;
             }
         }
 
