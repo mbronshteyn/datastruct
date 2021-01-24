@@ -1,4 +1,4 @@
-package easy;
+package interviews;
 
 public class Encode {
     public static void main(String[] args) {

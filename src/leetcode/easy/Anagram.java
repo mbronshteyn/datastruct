@@ -1,9 +1,6 @@
-package easy;
+package leetcode.easy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /*
 "An anagram is a word or phrase formed by rearranging
@@ -12,7 +9,7 @@ typically using all the original letters exactly once"
  */
 public class Anagram {
     public static void main(String[] args) {
-        // assume length is the same, other wise it is easy
+        // assume length is the same, other wise it is leetcode.easy
         String wordOne = "restful";
         String wordTwo = "fluster";
 
