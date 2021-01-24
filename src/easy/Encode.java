@@ -33,9 +33,9 @@ public class Encode {
   private static void validate(String actual, String expected){
       String result = encode(actual);
       if(result.equals(expected)){
-          System.out.println("SUCCESS: " + result);
+          System.out.printf("SUCCESS: %s%n", result);
       } else {
-        System.out.println(String.format("ERROR: result: %s; expected: %s", result, expected));
+        System.out.printf("ERROR: result: %s; expected: %s%n", result, expected);
       }
 
   }
