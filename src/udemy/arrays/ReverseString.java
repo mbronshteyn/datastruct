@@ -1,4 +1,4 @@
-package leetcode.easy;
+package udemy.arrays;
 
 /**
  * Reverse Java String

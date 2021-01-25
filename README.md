@@ -4,7 +4,7 @@ Collection of Java classes with coding problems which come during whiteboard int
 
 Most of them are from [leetcode.com](https://www.leetcode.com)
 
-leetcode.easy.ReverseString - reverse String recursively
+udemy.arrays.ReverseString - reverse String recursively
 <br><br><br>
 leetcode.easy.TwoNumbers - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target
 <br><br><br> 
