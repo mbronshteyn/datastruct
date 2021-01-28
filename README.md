@@ -1,6 +1,6 @@
 # datastruct
 
-Collection of Java classes with coding problems which come during whiteboard interview. All of them have my own solutoin
+Collection of Java classes with coding problems which come during whiteboard interview. All of them have my own solution
 
 Most of them are from [leetcode.com](https://www.leetcode.com)
 
