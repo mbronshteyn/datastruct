@@ -1,4 +1,4 @@
-package easy;
+package leetcode.easy;
 
 /**
  * Given a valid (IPv4) IP address, return a defanged version of that IP address.

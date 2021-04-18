@@ -1,4 +1,4 @@
-package easy;
+package leetcode.easy;
 
 public class CrawlerLogFolder {
   public static void main(String[] args) {

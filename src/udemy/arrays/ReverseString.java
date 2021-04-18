@@ -1,4 +1,4 @@
-package easy;
+package udemy.arrays;
 
 /**
  * Reverse Java String
