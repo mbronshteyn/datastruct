@@ -21,6 +21,7 @@ public class CompletableFutureTest {
                             })
                     .collect(Collectors.toList());
 
+    // introduce delay to see when async happens
     System.out.println("Sleeping ...");
     Thread.sleep(5000);
 
