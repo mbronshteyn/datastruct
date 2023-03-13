@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CompletableFutureTest {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 
     List<Greet> greetList =
             Stream.of("Hello", "Beautiful", "World ")
@@ -20,6 +20,9 @@ public class CompletableFutureTest {
                               return CompletableFuture.supplyAsync(greet::getGreetingMsg);
                             })
                     .collect(Collectors.toList());
+
+    System.out.println("Sleeping ...");
+    Thread.sleep(5000);
 
     List<String> threadInfoList =
             cfList.stream().map(CompletableFuture::join).collect(Collectors.toList());
@@ -42,6 +45,8 @@ class Greet {
    * @return
    */
   public String getGreetingMsg() {
-    return msg + " running on thread " + Thread.currentThread().getName();
+    String combinedMessage = msg + " running on thread " + Thread.currentThread().getName();
+    System.out.println("From method: " + combinedMessage);
+    return combinedMessage;
   }
 }
