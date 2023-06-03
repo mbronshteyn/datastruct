@@ -4,7 +4,7 @@ public class IntegerUnitValueObjectValueConverter extends UnitValueObjectValueCo
     @Override
     protected ValueRecord<Integer, String> createValueRecord(String numericValue, String literalValue) throws NumberFormatException {
         Integer intValue = Integer.valueOf(numericValue);
-        return new ValueRecord<Integer, String>(intValue, literalValue);
+        return new ValueRecord<>(intValue, literalValue);
     }
 
     public static void main(String[] args) {
