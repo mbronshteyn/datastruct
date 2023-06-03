@@ -13,5 +13,12 @@ public class DoubleUnitValueObjectValueConverter extends UnitValueObjectValueCon
         var stringValueRecord = doubleUnitValueObjectValueConverter.splitValue(test, "-");
         System.out.println("Value: " + stringValueRecord.getValue());
         System.out.println("Unit: " + stringValueRecord.getUnit());
+
+        System.out.println("\n=======================\n=======================\n");
+
+        test = "200.0kva";
+        stringValueRecord = doubleUnitValueObjectValueConverter.splitValue(test, "-");
+        System.out.println("Value: " + stringValueRecord.getValue());
+        System.out.println("Unit: " + stringValueRecord.getUnit());
     }
 }
