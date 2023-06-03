@@ -26,6 +26,8 @@ public abstract class UnitValueObjectValueConverter {
             if (matcher.find()) {
                 numericValue = matcher.group();
                 unitValue = value.substring(numericValue.length(), value.length());
+            } else {
+                throw new RuntimeException("Wrong input: " + value);
             }
             String group = matcher.group();
         } else {
