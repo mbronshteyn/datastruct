@@ -2,9 +2,9 @@ package converter;
 
 public class DoubleUnitValueObjectValueConverter extends UnitValueObjectValueConverter {
     @Override
-    protected ValueRecord<Double, String> createValueRecord(String[] splitResult) throws NumberFormatException {
-        var doubleValue = Double.valueOf(splitResult[0]);
-        return new ValueRecord<Double, String>(doubleValue, splitResult[1]);
+    protected ValueRecord<Double, String> createValueRecord(String numericValue, String literalValue) throws NumberFormatException {
+        var doubleValue = Double.valueOf(numericValue);
+        return new ValueRecord<>(doubleValue, literalValue);
     }
 
     public static void main(String[] args) {
