@@ -7,14 +7,14 @@ public abstract class UnitValueObjectValueConverter {
 
     Pattern pattern = Pattern.compile("(\\d+(?:\\.\\d+)?)");
 
-    public ValueRecord<?, String> splitValue(String value, String delimiter) {
+    public ValueRecord<? extends Number, String> splitValue(String value, String delimiter) {
         if (value == null) {
             return null;
         }
         return splitValue(value.replace(delimiter, ""));
     }
 
-    public ValueRecord<?, String> splitValue(String value) {
+    public ValueRecord<? extends Number, String> splitValue(String value) {
         if (value == null) {
             return null;
         }
@@ -38,5 +38,5 @@ public abstract class UnitValueObjectValueConverter {
         return createValueRecord(numericValue, unitValue);
     }
 
-    protected abstract ValueRecord<?, String> createValueRecord(String numericValue, String literalValue) throws NumberFormatException;
+    protected abstract ValueRecord<? extends Number, String> createValueRecord(String numericValue, String literalValue) throws NumberFormatException;
 }
