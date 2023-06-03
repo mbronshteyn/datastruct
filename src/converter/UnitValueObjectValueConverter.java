@@ -12,30 +12,20 @@ public abstract class UnitValueObjectValueConverter {
         if (value == null) {
             return null;
         }
-
-        var splitResult = value.split(delimiter);
-
-        return createValueRecord(splitResult[0], splitResult[1]);
+        return splitValue(value.replace(delimiter, ""));
     }
 
     public ValueRecord<?, String> splitValue(String value) {
         if (value == null) {
             return null;
         }
-
-        Matcher matcher = patternLiteral.matcher(value);
-        String literalPart = null;
-        if (matcher.find()) {
-           literalPart = matcher.group();
+        String[] parts;
+        if (value.contains(".")) {
+            parts = value.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)");
+        } else {
+            parts = value.split("(?<=\\d)(?=\\D)");
         }
-
-        matcher = patternNumeric.matcher(value);
-        String numericPart = null;
-        if (matcher.find()) {
-            numericPart = matcher.group();
-        }
-
-        return createValueRecord(numericPart, literalPart );
+        return createValueRecord(parts[0], parts[1]);
     }
 
     protected abstract ValueRecord<?, String> createValueRecord(String numericValue, String literalValue) throws NumberFormatException;
