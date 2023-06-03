@@ -1,16 +1,16 @@
 package converter;
 
-public class IntegerUnitValueObjectValueConverter extends UnitValueObjectValueConverter {
+public class DoubleUnitValueObjectValueConverter extends UnitValueObjectValueConverter {
     @Override
-    protected ValueRecord<Integer, String> createValueRecord(String[] splitResult) throws NumberFormatException {
-        Integer intValue = Integer.valueOf(splitResult[0]);
-        return new ValueRecord<Integer, String>(intValue, splitResult[1]);
+    protected ValueRecord<Double, String> createValueRecord(String[] splitResult) throws NumberFormatException {
+        var doubleValue = Double.valueOf(splitResult[0]);
+        return new ValueRecord<Double, String>(doubleValue, splitResult[1]);
     }
 
     public static void main(String[] args) {
-        String test = "200-kva";
-        IntegerUnitValueObjectValueConverter integerUnitValueObjectValueConverter = new IntegerUnitValueObjectValueConverter();
-        var stringValueRecord = integerUnitValueObjectValueConverter.splitValue(test, "-");
+        String test = "200.0-kva";
+        DoubleUnitValueObjectValueConverter doubleUnitValueObjectValueConverter = new DoubleUnitValueObjectValueConverter();
+        var stringValueRecord = doubleUnitValueObjectValueConverter.splitValue(test, "-");
         System.out.println("Value: " + stringValueRecord.getValue());
         System.out.println("Unit: " + stringValueRecord.getUnit());
     }
