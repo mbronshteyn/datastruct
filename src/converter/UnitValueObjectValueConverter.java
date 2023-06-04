@@ -18,7 +18,6 @@ public abstract class UnitValueObjectValueConverter {
         if (value == null) {
             return null;
         }
-        String[] parts = null;
         String numericValue;
         String unitValue;
         Matcher matcher = pattern.matcher(value);
