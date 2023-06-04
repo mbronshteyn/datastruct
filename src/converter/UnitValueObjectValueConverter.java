@@ -39,5 +39,13 @@ public abstract class UnitValueObjectValueConverter {
         return createValueRecord(numericValue, unitValue);
     }
 
+    /**
+     * Override method to supply either Integer or Double type of value record
+     *
+     * @param numericValue
+     * @param literalValue
+     * @return
+     * @throws NumberFormatException
+     */
     protected abstract ValueRecord<? extends Number, String> createValueRecord(String numericValue, String literalValue) throws NumberFormatException;
 }
