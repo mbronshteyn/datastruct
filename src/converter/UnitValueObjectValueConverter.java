@@ -19,21 +19,14 @@ public abstract class UnitValueObjectValueConverter {
             return null;
         }
         String[] parts = null;
-        String numericValue = null;
-        String unitValue = null;
-        if (value.contains(".")) {
-            Matcher matcher = pattern.matcher(value);
-            if (matcher.find()) {
-                numericValue = matcher.group();
-                unitValue = value.substring(numericValue.length(), value.length());
-            } else {
-                throw new RuntimeException("Wrong input: " + value);
-            }
-            String group = matcher.group();
+        String numericValue;
+        String unitValue;
+        Matcher matcher = pattern.matcher(value);
+        if (matcher.find()) {
+            numericValue = matcher.group();
+            unitValue = value.substring(numericValue.length(), value.length());
         } else {
-            parts = value.split("(?<=\\d)(?=\\D)");
-            numericValue = parts[0];
-            unitValue = parts[1];
+            throw new RuntimeException("Wrong input: " + value);
         }
         return createValueRecord(numericValue, unitValue);
     }
