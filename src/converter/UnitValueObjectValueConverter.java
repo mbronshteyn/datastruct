@@ -11,6 +11,7 @@ public abstract class UnitValueObjectValueConverter {
         if (value == null) {
             return null;
         }
+        // remove delimiter as we will not need to look for numeric value
         return splitValue(value.replace(delimiter, ""));
     }
 
@@ -21,10 +22,12 @@ public abstract class UnitValueObjectValueConverter {
         String numericValue;
         String unitValue;
         Matcher matcher = pattern.matcher(value);
+        // look for numeric value and get the rest as unit value
         if (matcher.find()) {
             numericValue = matcher.group();
             unitValue = value.substring(numericValue.length());
         } else {
+            // this is a sample, add more meaningful error message, if needed
             throw new RuntimeException("Wrong input: " + value);
         }
         return createValueRecord(numericValue, unitValue);
