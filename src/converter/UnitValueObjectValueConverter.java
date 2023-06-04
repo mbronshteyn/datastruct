@@ -23,7 +23,7 @@ public abstract class UnitValueObjectValueConverter {
         Matcher matcher = pattern.matcher(value);
         if (matcher.find()) {
             numericValue = matcher.group();
-            unitValue = value.substring(numericValue.length(), value.length());
+            unitValue = value.substring(numericValue.length());
         } else {
             throw new RuntimeException("Wrong input: " + value);
         }
