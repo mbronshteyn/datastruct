@@ -7,6 +7,7 @@ public class DoubleUnitValueObjectValueConverter extends UnitValueObjectValueCon
         return new ValueRecord<>(doubleValue, literalValue);
     }
 
+    /****
     public static void main(String[] args) {
         String test = "200.0-kva";
         DoubleUnitValueObjectValueConverter doubleUnitValueObjectValueConverter = new DoubleUnitValueObjectValueConverter();
@@ -21,4 +22,5 @@ public class DoubleUnitValueObjectValueConverter extends UnitValueObjectValueCon
         System.out.println("Value: " + stringValueRecord.getValue());
         System.out.println("Unit: " + stringValueRecord.getUnit());
     }
+     ***/
 }

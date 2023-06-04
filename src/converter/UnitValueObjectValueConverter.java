@@ -5,7 +5,13 @@ import java.util.regex.Pattern;
 
 public abstract class UnitValueObjectValueConverter {
 
+    private static final String DEFAULT_DELIMITER = "-";
+
     Pattern pattern = Pattern.compile("(\\d+(?:\\.\\d+)?)");
+
+    public ValueRecord<? extends Number, String> splitValueWithDefaultDelimiter (String value) {
+        return this.splitValue(value, DEFAULT_DELIMITER);
+    }
 
     public ValueRecord<? extends Number, String> splitValue(String value, String delimiter) {
         if (value == null) {

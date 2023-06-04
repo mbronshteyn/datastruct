@@ -7,6 +7,7 @@ public class IntegerUnitValueObjectValueConverter extends UnitValueObjectValueCo
         return new ValueRecord<>(intValue, literalValue);
     }
 
+    /**
     public static void main(String[] args) {
         String test = "200-kva";
         IntegerUnitValueObjectValueConverter integerUnitValueObjectValueConverter = new IntegerUnitValueObjectValueConverter();
@@ -21,4 +22,5 @@ public class IntegerUnitValueObjectValueConverter extends UnitValueObjectValueCo
         System.out.println("Value: " + stringValueRecord.getValue());
         System.out.println("Unit: " + stringValueRecord.getUnit());
     }
+     **/
 }
