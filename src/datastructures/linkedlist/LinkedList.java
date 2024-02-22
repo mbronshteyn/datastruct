@@ -40,6 +40,26 @@ public class LinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        if (length == 0) {
+            return null;
+        }
+        var node = new Node(tail.value);
+        Node temp = head;
+        if (length == 1) {
+            makeEmpty();
+        } else {
+            // need to iterate until the node before last node
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            // now temp points to the node before last
+            tail = temp;
+            length--;
+        }
+        return node;
+    }
+
 
     class Node {
         int value;
