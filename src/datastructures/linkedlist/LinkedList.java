@@ -60,6 +60,12 @@ public class LinkedList {
         return node;
     }
 
+    public void prepend(final int i) {
+        var node = new Node(i);
+        node.next = head;
+        head = node;
+    }
+
 
     class Node {
         int value;
