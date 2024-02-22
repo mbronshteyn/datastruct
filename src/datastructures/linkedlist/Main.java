@@ -5,7 +5,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LinkedList myLinkedList = new LinkedList(4);
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.makeEmpty();
+        myLinkedList.append(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
 
         myLinkedList.getHead();
         myLinkedList.getTail();
@@ -15,17 +19,18 @@ public class Main {
         myLinkedList.printList();
 
         /*
-            EXPECTED OUTPUT:
-            ----------------
-            Head: 4
-            Tail: 4
-            Length: 1
+       		EXPECTED OUTPUT:
+        	----------------
+        	Head: 1
+        	Tail: 3
+        	Length: 3
 
-            Linked List:
-            4
+        	Linked List:
+        	1
+        	2
+        	3
 
-        */
-
+     	*/
     }
 
 }

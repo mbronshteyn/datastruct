@@ -1,5 +1,7 @@
 package datastructures.linkedlist;
 
+import org.w3c.dom.Node;
+
 public class LinkedList {
 
 
@@ -17,6 +19,25 @@ public class LinkedList {
         var node = new Node(value);
         head = node;
         tail = node;
+        length = 1;
+    }
+
+    public void append(final int i) {
+        // check if the list has only one node
+        var node = new Node(i);
+        if (head == tail) {
+            if (head == null) {
+                head = node;
+                tail = node;
+            } else {
+                head.next = node;
+                tail = node;
+            }
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+        length++;
     }
 
 
@@ -58,6 +79,19 @@ public class LinkedList {
     public void getLength() {
         System.out.println("Length: " + length);
     }
+
+    public void makeEmpty() {
+        head = null;
+        tail = null;
+        length = 0;
+    }
+
+    // WRITE APPEND METHOD HERE //
+    //                          //
+    //                          //
+    //                          //
+    //                          //
+    //////////////////////////////
 
 }
 
